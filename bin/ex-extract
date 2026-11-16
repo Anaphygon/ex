@@ -1,0 +1,16 @@
+#!/opt/homebrew/bin/python3 -IB
+"""Entry point for ex.
+
+Isolated mode keeps the working directory off sys.path: this runs inside
+folders full of freshly extracted files, and a planted ``zipfile.py`` there
+must not be importable.
+"""
+
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from ex.cli import main  # noqa: E402
+
+sys.exit(main())

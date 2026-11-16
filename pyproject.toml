@@ -1,0 +1,21 @@
+[project]
+name = "ex"
+version = "1.0.0"
+description = "Extract (almost) any archive with one command or one right-click."
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = ["pytest", "pytest-cov"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["ex"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true

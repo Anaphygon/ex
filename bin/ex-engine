@@ -1,0 +1,11 @@
+#!/opt/homebrew/bin/python3 -IB
+"""JSON-lines engine behind the Ex app. See ex/engine.py for the protocol."""
+
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from ex.engine import main  # noqa: E402
+
+sys.exit(main())
